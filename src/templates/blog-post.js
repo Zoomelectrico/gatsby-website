@@ -1,11 +1,85 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import styled from '@emotion/styled'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+const Title = styled.h1`
+  text-align: center;
+  color: rgb(2, 10, 23);
+  font-size: 2rem;
+  margin: 0px;
+  margin-bottom: 0.75rem;
+  padding: 0px;
+`
 
+const Date = styled.p`
+  display: block;
+  text-align: left;
+  font-size: 0.85rem;
+  color: rgb(2, 10, 23);
+`
+
+const Section = styled.section`
+  color: #333333;
+  margin: 1rem 0px;
+  padding: 0.5rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: rgb(2, 10, 23);
+    margin: 1rem 0px;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  a {
+    text-decoration: none;
+    color: #4481eb;
+  }
+  hr {
+    border-width: 0.5px;
+    border-color: rgb(2, 10, 23);
+    margin: 1.25rem auto;
+    width: 50%;
+  }
+  ul {
+    li {
+      p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+      }
+    }
+  }
+`
+
+const Line = styled.hr`
+  border-width: 0.5px;
+  border-color: rgb(2, 10, 23);
+  margin-bottom: 1rem;
+  width: 100%;
+`
+
+const Pagination = styled.nav``
+const PaginationItems = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`
+const PaginationItem = styled.li`
+  a {
+    text-decoration: none;
+    color: rgb(2, 10, 23);
+  }
+`
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -20,61 +94,30 @@ class BlogPostTemplate extends React.Component {
         />
         <article>
           <header>
-            <h1
-              style={{
-                marginTop: rhythm(1),
-                marginBottom: 0,
-              }}
-            >
-              {post.frontmatter.title}
-            </h1>
-            <p
-              style={{
-                ...scale(-1 / 5),
-                display: `block`,
-                marginBottom: rhythm(1),
-              }}
-            >
-              {post.frontmatter.date}
-            </p>
+            <Title>{post.frontmatter.title}</Title>
+            <Date>{post.frontmatter.date}</Date>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
-          <footer>
-            <Bio />
-          </footer>
+          <Section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Line />
         </article>
-
-        <nav>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
+        <Pagination>
+          <PaginationItems>
+            <PaginationItem>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
               )}
-            </li>
-            <li>
+            </PaginationItem>
+            <PaginationItem>
               {next && (
                 <Link to={next.fields.slug} rel="next">
                   {next.frontmatter.title} →
                 </Link>
               )}
-            </li>
-          </ul>
-        </nav>
+            </PaginationItem>
+          </PaginationItems>
+        </Pagination>
       </Layout>
     )
   }
