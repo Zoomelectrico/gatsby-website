@@ -10,6 +10,7 @@ const Container = styled.section`
   padding: 0rem 3rem 4rem 3rem;
   width: 100%;
   display: flex;
+  flex-wrap: wrap-reverse;
 `
 
 const PhotoContainer = styled.div`
@@ -39,9 +40,9 @@ const TextContainer = styled.div`
     margin-bottom: 0px;
   }
   p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
-    line-height: 1.5;
+    line-height: 1.7;
     text-align: right;
   }
 `
@@ -80,10 +81,13 @@ const HomeBio = () => {
           Mi nombre es Jose Roberto Quevedo Gabizon, soy de Valencia, Venezuela.
           Vio en Caracas. Estudie Ingenieria de Sistemas en al Universidad
           Metropolitana con una Beca de Excelencia Academica. Me dedico al
-          desarrollo de software me encanta experimentar con nuevas tecnologias
-          y trabajar para hacer de este mundo mejor. En la actualidad estoy
-          dedicado a trabajar con Node.js, MongoDB, React.js, MySQL, Next.js,
-          Gatsby.js, GraphQL y python.
+          desarrollo de software y al docencia, me encanta experimentar con
+          nuevas tecnologias y trabajar para hacer de este mundo mejor.
+          <br />
+          <br />
+          En la actualidad estoy dedicado a trabajar con javascript y python con
+          las siguiente herramientas Node.js, MongoDB, React.js, MySQL, Next.js,
+          Gatsby.js, GraphQL y Tensorflow, Keras, Pandas, Numpy.
         </p>
         {/* <Button to="/bio">saber mas</Button> */}
       </TextContainer>

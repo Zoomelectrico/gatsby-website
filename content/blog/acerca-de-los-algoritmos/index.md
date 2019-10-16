@@ -14,7 +14,7 @@ Durante mucho tiempo el ser humano se ha avocado a la tarea de resolver problema
 
 ## Pensamiento Algorítmico
 
-Es posible definir a un algoritmo como un procedimiento que toma ciertos valores de entrada y produce un conjunto de valores como salida, computacionalmente hablando esto es una seria de secuencias que transforman una entrada en un salida (Cormen et al. ). En consecuencia, el pensamiento algorítmico no es mas que un esquema de pensamiento, que permite convertir la solución de un problema en un algoritmo.
+Es posible definir a un algoritmo como un procedimiento que toma ciertos valores de entrada y produce un conjunto de valores como salida, computacionalmente hablando esto es una seria de secuencias que transforman una entrada en un salida (Cormen et al.). En consecuencia, el pensamiento algorítmico no es mas que un esquema de pensamiento, que permite convertir la solución de un problema en un algoritmo.
 
 Sin embargo, no es trivial crear un algoritmo, es decir, no todas las secuencias lógicas para resolver un problemas son adecuadas o funcionan correctamente, ilustremos este razonamiento con un ejemplo.
 
